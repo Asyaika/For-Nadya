@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fffcdf;
+  text-align: center;
+}
+
+p {
+    color:#784021
+}
+.scene {
+  display: none;
+  position: absolute;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+}
+
+.scene.active {
+  display: flex;
+  opacity: 1;
+}
+
+/* efek animasi fade & bounce */
+.scene.fade {
+  animation: fadeScene 1s ease forwards;
+}
+
+.scene.bounce {
+  animation: bounceScene 1s ease forwards;
+}
+
+/* Keyframes fade lembut */
+@keyframes fadeScene {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Keyframes bounce ceria */
+@keyframes bounceScene {
+  0% { opacity: 0; transform: translateY(100px) scale(0.8); }
+  50% { opacity: 1; transform: translateY(-15px) scale(1.05); }
+  70% { transform: translateY(10px) scale(0.97); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Gaya umum */
+.scene img {
+  width: 80%;
+  height: auto;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+h1 {
+  color: #ab5c2d;
+  font-size: 2em;
+  margin-top: -10px;
+  min-height: 2.5em;
+  padding: 20px;
+  line-height: 1.3em;
+}
+
+button {
+  background: #cb6a6a;
+  color: #ffffff;
+  font-weight: 700;
+  border: none;
+  padding: 10px 28px;
+  font-size: 1.1em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: -20px;
+}
+
+button:hover {
+  background: #ea7b7b;
+  transform: scale(1.05);
+}
+
+/* Animasi bounce kecil untuk kue */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.cake {
+  animation: bounce 2s infinite;
+}
